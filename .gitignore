@@ -32,3 +32,8 @@ build/
 *.exe
 *.out
 *.app
+
+.idea
+/target
+/cmake-build-*
+clion
