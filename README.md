@@ -20,3 +20,14 @@ This Demo show How Rust use C++ library in Windows OS.
 3. Clion Settings -> ToolChains, Architecture choose `amd64`
 4. Clion menu build -> install
 5. `cargo run`
+
+# 问题
+1. Debug 模式 和 Relase 模式的 DLL 是不同的，需要各自编译并复制到 Rust 项目中的 target/debug|release 目录下。
+2. 当遇到 C++ 和 Rust 共享数据结构（C++ 与 Rust 相互调用）的时候， 这个 Demo 解决不了(如何在 CMake 中引入 Cargo 生成 header 的同时，在 Cargo 中引入 C++ 的 header)。
+
+
+# 其他方案设想
+1. 退回到 Cargo 编译所有，并使用 cxx 来生成 Header，可解决上述问题，但尚不知道如何解决 C++ 里面复杂的 Header 依赖问题。
+
+
+
