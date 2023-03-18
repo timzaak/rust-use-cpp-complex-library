@@ -4,7 +4,7 @@
 
 目前尚未实现脚本化打包。 需要借助 Clion IDE 来搞。
 
-This Demo show How Rust use C++ library in Windows OS.
+This Demo show How Rust use C++ library（CMake） in Windows OS.
 
 
 ## 打包
@@ -30,4 +30,8 @@ This Demo show How Rust use C++ library in Windows OS.
 1. 退回到 Cargo 编译所有，并使用 cxx 来生成 Header，可解决上述问题，但尚不知道如何解决 C++ 里面复杂的 Header 依赖问题。
 
 
+# 最终上生产方案
+1. CMake 封装 C++ 成 C HEADER。
+2. Rust use bindgen to use C++。
 
+Bazel 项目封装 可参考：https://github.com/timzaak/bazel_wrapper
